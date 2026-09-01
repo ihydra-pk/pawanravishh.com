@@ -2,48 +2,80 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import profileImage from '../assets/profile.png';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const skills = ['Salesforce', 'Apex', 'SOQL', 'Git & CI/CD', 'Python', 'Java', 'Data Quality', 'Web Security'];
+const certifications = [
+	'AI Fluency Framework & Foundations', 'Salesforce Certified Platform App Builder',
+	'Salesforce Certified AI Specialist', 'Salesforce Certified Data Cloud Consultant',
+	'Salesforce Certified Administrator', 'AWS Certified Cloud Practitioner',
+];
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
+	<head><BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} /></head>
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="hero" aria-labelledby="intro-title">
+				<div class="hero-copy">
+					<p class="eyebrow">M.Sc. Computer Science · Paderborn, Germany</p>
+					<h1 id="intro-title">Hi, I’m Pawan.<br /><em>I build dependable Salesforce experiences.</em></h1>
+					<p class="intro">A Salesforce CRM Engineer and master’s student at the University of Paderborn, bringing two years of experience turning business processes into clear, maintainable systems - and expanding into applied AI.</p>
+					<div class="actions"><a class="button button-primary" href="mailto:ravishpawan10@gmail.com">Let’s talk</a><a class="button button-secondary" href="/Pawankumar-Ravish-CV.pdf" target="_blank">View CV <span aria-hidden="true">↗</span></a></div>
+				</div>
+				<div class="portrait-wrap"><img src={profileImage.src} width={profileImage.width} height={profileImage.height} alt="Pawankumar Ravish" /><div class="availability"><span></span> Open to Werkstudent roles</div></div>
+			</section>
+
+			<section class="impact" aria-label="Professional summary"><div><strong>2 years</strong><span>Salesforce experience</span></div><div><strong>6</strong><span>industry certifications</span></div><div><strong>B1 / C2</strong><span>German / English</span></div></section>
+
+			<section class="section split" id="about" aria-labelledby="about-title">
+				<p class="eyebrow">About</p>
+				<div><h2 id="about-title">A practical engineer with a systems mindset.</h2><p>I am currently studying Computer Science at the University of Paderborn, with completed coursework in Web Security and Data Science for Software Engineering. Before moving to Germany, I worked at Tata Consultancy Services as a Salesforce Administrator.</p><p>I enjoy the work between people and technology: understanding a team’s process, modelling it cleanly, and making it easier to use. I’m now looking for a Werkstudent opportunity where I can contribute those skills while growing as a software engineer.</p></div>
+			</section>
+
+			<section class="section" id="experience" aria-labelledby="experience-title">
+				<div class="section-heading"><div><p class="eyebrow">Experience</p><h2 id="experience-title">What I’ve worked on</h2></div><p>Building well-governed CRM workflows that are useful to the people who rely on them.</p></div>
+				<article class="role-card"><div class="role-meta"><p>Feb 2024 – Mar 2026</p><p>Mumbai, India</p></div><div><h3>Salesforce Administrator</h3><p class="company">Tata Consultancy Services Limited</p><ul><li>Configured objects, fields, page layouts, FlexiPages, and Lightning app experiences.</li><li>Created reports and 20+ dashboards to give teams clearer operational visibility.</li><li>Automated processes with Flow, validation rules, email alerts, and Apex triggers.</li><li>Maintained data quality through migrations, deduplication, sandbox testing, and SFDX-based deployments.</li></ul></div></article>
+				<article class="role-card project-card"><div class="role-meta"><p>Independent project</p><p>2023</p></div><div><h3>Bloggs.com</h3><p class="company">Blog publishing application</p><p class="project-summary">Built a web application for publishing blog posts, with a Bootstrap-based interface and a JSP/Servlet backend. Used the DAO pattern to keep data access reusable and the application structure maintainable.</p><div class="project-tags"><span>Java</span><span>JSP &amp; Servlets</span><span>Bootstrap</span><span>DAO pattern</span></div><a class="project-link" href="https://github.com/ihydra-pk/Bloggs.com" target="_blank" rel="noreferrer">View source on GitHub <span aria-hidden="true">↗</span></a></div></article>
+				<article class="role-card project-card"><div class="role-meta"><p>Independent project</p><p>MERN stack</p></div><div><h3>Meeting Scheduler</h3><p class="company">Meeting-room booking application</p><p class="project-summary">Developed a full-stack application for booking available meeting rooms, bringing together a React front end with a MongoDB, Express, and Node.js backend. Used Mongoose for data modelling and persistence.</p><div class="project-tags"><span>React</span><span>MongoDB</span><span>Express</span><span>Node.js</span><span>Mongoose</span></div><a class="project-link" href="https://github.com/ihydra-pk/meeting_scheduler" target="_blank" rel="noreferrer">View source on GitHub <span aria-hidden="true">↗</span></a></div></article>
+			</section>
+
+			<section class="section capabilities" id="skills" aria-labelledby="skills-title"><div><p class="eyebrow">Capabilities</p><h2 id="skills-title">Tools I use to make work flow.</h2></div><div class="skill-list">{skills.map((skill) => <span>{skill}</span>)}</div></section>
+
+			<section class="section ai-direction" aria-labelledby="ai-title"><div><p class="eyebrow">Direction of study</p><h2 id="ai-title">Growing into AI with an engineering foundation.</h2></div><div><p>I’m actively studying AI concepts independently and plan to take Machine Learning and Agentic Software Engineering courses at the University of Paderborn. My focus is not just on using AI tools, but on understanding how to evaluate, apply, and build with them responsibly.</p><p>My Anthropic AI Fluency certification has strengthened this approach: clear problem framing, thoughtful delegation, careful evaluation, and human judgment are essential parts of useful AI systems.</p><a class="text-link" href="/blog">Follow my learning notes <span aria-hidden="true">→</span></a></div></section>
+
+			<section class="section credentials" aria-labelledby="credentials-title"><div><p class="eyebrow">Credentials</p><h2 id="credentials-title">Learning with intent.</h2></div><div class="credential-grid">{certifications.map((certification) => <p><span>✦</span>{certification}</p>)}</div></section>
+
+			<section class="contact-card" id="contact" aria-labelledby="contact-title"><p class="eyebrow">Next step</p><h2 id="contact-title">Looking for a Werkstudent who can bring both structure and curiosity?</h2><p>I’m interested in software engineering, CRM, cloud, and AI-focused student roles across Germany.</p><a class="button button-primary" href="mailto:ravishpawan10@gmail.com">ravishpawan10@gmail.com</a></section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+main{max-width:1120px;width:calc(100% - 3rem);padding:4.5rem 0 6rem}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:4rem;align-items:center;min-height:520px}.eyebrow{color:#52606d;font-size:.8rem;font-weight:700;letter-spacing:.12em;margin:0 0 1rem;text-transform:uppercase}h1{font-size:clamp(3.4rem,7vw,6.3rem);letter-spacing:-.075em;line-height:.97;margin-bottom:1.8rem}h1 em{color:#d65a31;font-family:Georgia,serif;font-weight:400;letter-spacing:-.06em}.intro{color:#3e4a57;font-size:1.35rem;line-height:1.55;max-width:690px}.actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.2rem}.button{border-radius:100px;display:inline-block;font-size:1rem;font-weight:700;padding:.78rem 1.2rem;text-decoration:none;transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px)}.button-primary{background:#172a3a;color:white}.button-primary:hover{background:#d65a31;color:white}.button-secondary{border:1px solid #bcc5ce;color:#172a3a}.portrait-wrap{position:relative}.portrait-wrap img{aspect-ratio:1;border-radius:48% 48% 48% 6%;box-shadow:16px 16px 0 #dfe7e5;display:block;object-fit:cover;width:100%}.availability{align-items:center;background:white;border:1px solid #d8e0e4;border-radius:100px;bottom:-1.1rem;box-shadow:0 8px 28px rgba(23,42,58,.12);display:flex;font-size:.86rem;font-weight:700;gap:.5rem;left:-1.5rem;padding:.6rem .9rem;position:absolute;white-space:nowrap}.availability span{background:#3a9d5d;border-radius:50%;height:.6rem;width:.6rem}.impact{border-bottom:1px solid #d9e1e5;border-top:1px solid #d9e1e5;display:grid;grid-template-columns:repeat(3,1fr);margin:3rem 0 7rem;padding:1.6rem 0}.impact div{border-right:1px solid #d9e1e5;padding-left:1.8rem}.impact div:first-child{padding-left:0}.impact div:last-child{border:0}.impact strong,.impact span{display:block}.impact strong{color:#172a3a;font-size:1.6rem;letter-spacing:-.04em}.impact span{color:#657381;font-size:.9rem}.section{margin:0 0 8rem}.split{display:grid;gap:5rem;grid-template-columns:.6fr 1.4fr}h2{font-size:clamp(2.2rem,4vw,3.6rem);letter-spacing:-.055em;line-height:1.05}.split h2{max-width:650px}.split p:not(.eyebrow),.ai-direction p{color:#465462;font-size:1.18rem;line-height:1.65;max-width:690px}.section-heading{align-items:end;display:flex;gap:3rem;justify-content:space-between;margin-bottom:2.5rem}.section-heading>p{color:#657381;font-size:1rem;max-width:340px}.role-card{border-top:2px solid #172a3a;display:grid;gap:4rem;grid-template-columns:.6fr 1.4fr;padding:1.5rem 0 2rem}.role-meta p{color:#657381;font-size:.9rem;line-height:1.4;margin:0 0 .25rem}h3{font-size:1.6rem;margin-bottom:.15rem}.company{color:#d65a31;font-weight:700;margin-top:0}.role-card ul{color:#465462;font-size:1rem;line-height:1.5;margin:1.4rem 0 0;padding-left:1.15rem}.role-card li{margin-bottom:.5rem;padding-left:.3rem}.project-card{border-color:#d4dfdc}.project-summary{color:#465462;font-size:1rem;line-height:1.6;max-width:660px}.project-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}.project-tags span{border:1px solid #cbd7d4;border-radius:100px;color:#42515d;font-size:.8rem;font-weight:700;padding:.35rem .6rem}.project-link{color:#d65a31;display:inline-block;font-size:.9rem;font-weight:700;margin-top:1.2rem;text-decoration:none}.project-link:hover{text-decoration:underline}.capabilities,.credentials,.ai-direction{align-items:start;display:grid;gap:4rem;grid-template-columns:1fr 1fr}.skill-list{display:flex;flex-wrap:wrap;gap:.65rem}.skill-list span{background:#e9f0ef;border-radius:100px;color:#263846;font-size:.95rem;font-weight:700;padding:.55rem .8rem}.ai-direction{border-top:1px solid #d9e1e5;padding-top:3rem}.ai-direction p{font-size:1.04rem;margin-top:0}.text-link{color:#d65a31;font-weight:700;text-decoration:none}.text-link:hover{text-decoration:underline}.credentials{background:#f1f5f4;margin-left:-2.5rem;margin-right:-2.5rem;padding:3.5rem 2.5rem}.credential-grid{display:grid;grid-template-columns:1fr 1fr;gap:.2rem 1.2rem}.credential-grid p{border-bottom:1px solid #cedbd8;color:#34434e;font-size:.9rem;line-height:1.35;margin:0;padding:.8rem 0}.credential-grid span{color:#d65a31;margin-right:.45rem}.contact-card{background:#172a3a;color:white;padding:clamp(2.3rem,6vw,5rem);text-align:center}.contact-card .eyebrow{color:#b5c9c7}.contact-card h2{color:white;margin:0 auto 1rem;max-width:850px}.contact-card>p:not(.eyebrow){color:#d5e1df;margin:0 auto 2rem;max-width:650px}.contact-card .button-primary{background:#d65a31}.contact-card .button-primary:hover{background:white;color:#172a3a}@media(max-width:720px){main{width:calc(100% - 2rem);padding-top:2.5rem}.hero,.split,.role-card,.capabilities,.credentials,.ai-direction{grid-template-columns:1fr;gap:2rem}.portrait-wrap{max-width:330px}.impact{margin-bottom:4.5rem}.impact div{padding-left:.8rem}.impact strong{font-size:1.25rem}.impact span{font-size:.75rem}.section{margin-bottom:5rem}.section-heading{align-items:start;display:block}.credentials{margin-left:-1rem;margin-right:-1rem;padding:2.5rem 1rem}.credential-grid{grid-template-columns:1fr}}
+</style>
+
+<style>
+	.hero::before{background:radial-gradient(circle,rgba(214,90,49,.14) 0,rgba(214,90,49,0) 68%);content:"";filter:blur(5px);height:25rem;left:-13rem;pointer-events:none;position:absolute;top:-7rem;width:25rem;z-index:-1;animation:ambient-drift 11s ease-in-out infinite alternate}.hero{position:relative}.hero-copy>*{animation:hero-rise .8s cubic-bezier(.2,.7,.2,1) both}.hero-copy .eyebrow{animation-delay:.06s}.hero-copy h1{animation-delay:.14s}.hero-copy .intro{animation-delay:.23s}.hero-copy .actions{animation-delay:.32s}.portrait-wrap{animation:portrait-enter 1.05s cubic-bezier(.16,1,.3,1) .2s both}.portrait-wrap img{animation:portrait-float 6s ease-in-out 1.2s infinite}.availability{animation:availability-in .6s cubic-bezier(.16,1,.3,1) .85s both}.availability span{animation:status-pulse 2.2s ease-out infinite}.impact div{transition:transform .3s ease}.impact div:hover{transform:translateY(-5px)}.role-card{transition:border-color .3s ease,transform .3s ease}.role-card:hover{border-color:#d65a31;transform:translateX(.45rem)}.project-tags span{transition:background .25s ease,border-color .25s ease,transform .25s ease}.project-tags span:hover{background:#e9f0ef;border-color:#9aada8;transform:translateY(-3px)}.skill-list span{animation:tag-arrive .5s cubic-bezier(.2,.7,.2,1) both;transition:background .25s ease,color .25s ease,transform .25s ease}.skill-list span:nth-child(1){animation-delay:.04s}.skill-list span:nth-child(2){animation-delay:.08s}.skill-list span:nth-child(3){animation-delay:.12s}.skill-list span:nth-child(4){animation-delay:.16s}.skill-list span:nth-child(5){animation-delay:.2s}.skill-list span:nth-child(6){animation-delay:.24s}.skill-list span:nth-child(7){animation-delay:.28s}.skill-list span:nth-child(8){animation-delay:.32s}.skill-list span:hover{background:#172a3a;color:#fff;transform:translateY(-4px)}.credential-grid p{transition:background .25s ease,padding-left .25s ease}.credential-grid p:hover{background:rgba(255,255,255,.55);padding-left:.45rem}.contact-card{overflow:hidden;position:relative}.contact-card::before{background:radial-gradient(circle,rgba(214,90,49,.42),transparent 67%);content:"";height:24rem;pointer-events:none;position:absolute;right:-9rem;top:-14rem;width:24rem;animation:ambient-drift 9s ease-in-out infinite alternate-reverse}.contact-card>*{position:relative}.motion-ready .reveal{opacity:0;transform:translateY(2.5rem);transition:opacity .72s cubic-bezier(.2,.7,.2,1),transform .72s cubic-bezier(.2,.7,.2,1)}.motion-ready .reveal.is-visible{opacity:1;transform:translateY(0)}@keyframes hero-rise{from{opacity:0;transform:translateY(1.5rem)}to{opacity:1;transform:translateY(0)}}@keyframes portrait-enter{from{opacity:0;transform:scale(.9) rotate(3deg)}to{opacity:1;transform:scale(1) rotate(0)}}@keyframes portrait-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-.8rem)}}@keyframes availability-in{from{opacity:0;transform:translateY(.75rem) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes status-pulse{0%{box-shadow:0 0 0 0 rgba(58,157,93,.5)}70%{box-shadow:0 0 0 .55rem rgba(58,157,93,0)}100%{box-shadow:0 0 0 0 rgba(58,157,93,0)}}@keyframes ambient-drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(2.5rem,1.5rem,0) scale(1.12)}}@keyframes tag-arrive{from{opacity:0;transform:translateY(.8rem) scale(.92)}to{opacity:1;transform:translateY(0) scale(1)}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.motion-ready .reveal{opacity:1;transform:none}}
+</style>
+
+<script>
+	const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	if (!prefersReducedMotion) {
+		document.documentElement.classList.add('motion-ready');
+		const targets = document.querySelectorAll<HTMLElement>('.section, .impact, .contact-card');
+		targets.forEach((target, index) => {
+			target.classList.add('reveal');
+			target.style.transitionDelay = `${Math.min(index % 3, 2) * 80}ms`;
+		});
+		const observer = new IntersectionObserver(
+			(entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add('is-visible')),
+			{ threshold: 0.12 },
+		);
+		targets.forEach((target) => observer.observe(target));
+	}
+</script>
