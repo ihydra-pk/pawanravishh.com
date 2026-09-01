@@ -2,6 +2,7 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
+const base = `${import.meta.env.BASE_URL}/`;
 ---
 
 <!doctype html>
@@ -14,7 +15,7 @@ import Header from '../../components/Header.astro';
 			<h1>Notes from the workbench.</h1>
 			<p>I’m building a home here for practical notes on AI, software engineering, Salesforce, developer tools, and the lessons that emerge while learning by building.</p>
 			<div class="coming"><span>01</span><div><h2>First posts are on the way.</h2><p>Expect concise write-ups as I explore Machine Learning, Agentic Software Engineering, and thoughtful ways to apply AI in real systems.</p></div></div>
-			<a href="/">← Back to portfolio</a>
+			<a href={base}>← Back to portfolio</a>
 		</main>
 		<Footer />
 	</body>

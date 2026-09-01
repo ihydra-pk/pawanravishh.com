@@ -6,7 +6,8 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://pawanravishh.com',
+	site: 'https://ihydra-pk.github.io',
+	base: '/pawanravishh.com',
 	output: 'static',
 	integrations: [mdx(), sitemap()],
 	fonts: [

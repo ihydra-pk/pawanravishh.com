@@ -1,20 +1,21 @@
 ---
 const navigation = [
-	{ href: '/#about', label: 'About' },
-	{ href: '/#experience', label: 'Experience' },
-	{ href: '/#skills', label: 'Skills' },
-	{ href: '/blog', label: 'Notes' },
+	{ href: '#about', label: 'About' },
+	{ href: '#experience', label: 'Experience' },
+	{ href: '#skills', label: 'Skills' },
+	{ href: 'blog', label: 'Notes' },
 ];
+const base = `${import.meta.env.BASE_URL}/`;
 ---
 
 <header>
 	<nav aria-label="Main navigation">
-		<a class="brand" href="/" aria-label="Pawan Ravish, home">
-			<span class="monogram" aria-hidden="true"><img src="/pr-monogram.svg" alt="" /></span>
+		<a class="brand" href={base} aria-label="Pawan Ravish, home">
+			<span class="monogram" aria-hidden="true"><img src={`${base}pr-monogram.svg`} alt="" /></span>
 			<span class="wordmark"><strong>Pawan</strong><em>Ravish</em><b aria-hidden="true">.</b></span>
 		</a>
 		<div class="nav-links">
-			{navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+			{navigation.map((item) => <a href={`${base}${item.href}`}>{item.label}</a>)}
 		</div>
 		<a class="contact" href="mailto:ravishpawan10@gmail.com"><span>Let’s connect</span><b aria-hidden="true">↗</b></a>
 	</nav>

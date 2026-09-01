@@ -11,6 +11,7 @@ const certifications = [
 	'Salesforce Certified AI Specialist', 'Salesforce Certified Data Cloud Consultant',
 	'Salesforce Certified Administrator', 'AWS Certified Cloud Practitioner',
 ];
+const base = `${import.meta.env.BASE_URL}/`;
 ---
 
 <!doctype html>
@@ -24,7 +25,7 @@ const certifications = [
 					<p class="eyebrow">M.Sc. Computer Science · Paderborn, Germany</p>
 					<h1 id="intro-title">Hi, I’m Pawan.<br /><em>I build dependable Salesforce experiences.</em></h1>
 					<p class="intro">A Salesforce CRM Engineer and master’s student at the University of Paderborn, bringing two years of experience turning business processes into clear, maintainable systems - and expanding into applied AI.</p>
-					<div class="actions"><a class="button button-primary" href="mailto:ravishpawan10@gmail.com">Let’s talk</a><a class="button button-secondary" href="/Pawankumar-Ravish-CV.pdf" target="_blank">View CV <span aria-hidden="true">↗</span></a></div>
+					<div class="actions"><a class="button button-primary" href="mailto:ravishpawan10@gmail.com">Let’s talk</a><a class="button button-secondary" href={`${base}Pawankumar-Ravish-CV.pdf`} target="_blank">View CV <span aria-hidden="true">↗</span></a></div>
 				</div>
 				<div class="portrait-wrap"><img src={profileImage.src} width={profileImage.width} height={profileImage.height} alt="Pawankumar Ravish" /><div class="availability"><span></span> Open to Werkstudent roles</div></div>
 			</section>
@@ -45,7 +46,7 @@ const certifications = [
 
 			<section class="section capabilities" id="skills" aria-labelledby="skills-title"><div><p class="eyebrow">Capabilities</p><h2 id="skills-title">Tools I use to make work flow.</h2></div><div class="skill-list">{skills.map((skill) => <span>{skill}</span>)}</div></section>
 
-			<section class="section ai-direction" aria-labelledby="ai-title"><div><p class="eyebrow">Direction of study</p><h2 id="ai-title">Growing into AI with an engineering foundation.</h2></div><div><p>I’m actively studying AI concepts independently and plan to take Machine Learning and Agentic Software Engineering courses at the University of Paderborn. My focus is not just on using AI tools, but on understanding how to evaluate, apply, and build with them responsibly.</p><p>My Anthropic AI Fluency certification has strengthened this approach: clear problem framing, thoughtful delegation, careful evaluation, and human judgment are essential parts of useful AI systems.</p><a class="text-link" href="/blog">Follow my learning notes <span aria-hidden="true">→</span></a></div></section>
+			<section class="section ai-direction" aria-labelledby="ai-title"><div><p class="eyebrow">Direction of study</p><h2 id="ai-title">Growing into AI with an engineering foundation.</h2></div><div><p>I’m actively studying AI concepts independently and plan to take Machine Learning and Agentic Software Engineering courses at the University of Paderborn. My focus is not just on using AI tools, but on understanding how to evaluate, apply, and build with them responsibly.</p><p>My Anthropic AI Fluency certification has strengthened this approach: clear problem framing, thoughtful delegation, careful evaluation, and human judgment are essential parts of useful AI systems.</p><a class="text-link" href={`${base}blog`}>Follow my learning notes <span aria-hidden="true">→</span></a></div></section>
 
 			<section class="section credentials" aria-labelledby="credentials-title"><div><p class="eyebrow">Credentials</p><h2 id="credentials-title">Learning with intent.</h2></div><div class="credential-grid">{certifications.map((certification) => <p><span>✦</span>{certification}</p>)}</div></section>
 
