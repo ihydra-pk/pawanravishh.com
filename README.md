@@ -2,7 +2,7 @@
 
 My personal portfolio and blog built with Astro.
 
-🌐 **Live Site:** [pawanravishh.com](https://pawanravishh.com)
+🌐 **Live Site:** [pawanravishh.com]([https://pawanravishh.com](https://ihydra-pk.github.io/pawanravishh.com/))
 
 ## About
 
