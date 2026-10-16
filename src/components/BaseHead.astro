@@ -17,6 +17,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = FallbackImage } = Astro.props;
 const base = `${import.meta.env.BASE_URL}/`;
+
+const personSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: 'Pawankumar Ravish',
+	alternateName: 'Pawan Ravish',
+	jobTitle: 'Salesforce CRM Engineer',
+	description: 'Salesforce CRM Engineer and M.Sc. Computer Science student at the University of Paderborn.',
+	url: new URL(base, Astro.site).href,
+	alumniOf: { '@type': 'CollegeOrUniversity', name: 'University of Paderborn' },
+	knowsAbout: ['Salesforce', 'Apex', 'SOQL', 'CRM', 'Data Quality'],
+	sameAs: [
+		'https://github.com/ihydra-pk',
+		'https://www.linkedin.com/in/pawanravishh/',
+		'https://www.salesforce.com/trailblazer/pawanravish',
+	],
+};
 ---
 
 <!-- Global Metadata -->
@@ -59,6 +76,9 @@ const base = `${import.meta.env.BASE_URL}/`;
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image.src, Astro.url)} />
+
+<!-- Structured data -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)} />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ihydra-pk.github.io/pawanravishh.com/sitemap-index.xml
