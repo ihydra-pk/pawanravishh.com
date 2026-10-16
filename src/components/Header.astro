@@ -57,6 +57,13 @@ const base = `${import.meta.env.BASE_URL}/`;
 		} catch {}
 	});
 
+	// Keep other open tabs in sync.
+	window.addEventListener('storage', (event) => {
+		if (event.key === 'theme' && (event.newValue === 'light' || event.newValue === 'dark')) {
+			apply(event.newValue);
+		}
+	});
+
 	// Follow OS changes until the user picks a theme explicitly.
 	systemDark.addEventListener('change', (event) => {
 		if (!saved()) apply(event.matches ? 'dark' : 'light');
@@ -75,10 +82,10 @@ const base = `${import.meta.env.BASE_URL}/`;
 	.knob{align-items:center;background:var(--surface);border-radius:50%;box-shadow:0 2px 6px var(--shadow);color:var(--brand);display:flex;height:22px;justify-content:center;left:3px;position:absolute;top:3px;transition:transform .22s ease;width:22px}
 	.knob svg{height:14px;width:14px}
 	.icon-moon{display:none}
-	.theme-toggle[aria-checked='true'] .knob{transform:translateX(24px)}
-	.theme-toggle[aria-checked='true'] .icon-sun{display:none}
-	.theme-toggle[aria-checked='true'] .icon-moon{display:block}
-	:global([data-theme='dark']) .monogram img{filter:drop-shadow(0 0 1px var(--border-hover))}
+	:global(:root[data-theme='dark']) .knob{transform:translateX(24px)}
+	:global(:root[data-theme='dark']) .icon-sun{display:none}
+	:global(:root[data-theme='dark']) .icon-moon{display:block}
+	:global([data-theme='dark']) .monogram img{filter:drop-shadow(0 0 .6px var(--border-hover)) drop-shadow(0 0 .6px var(--border-hover))}
 	@media(max-width:720px){.nav-end{gap:.5rem}}
 	@media(prefers-reduced-motion:reduce){.theme-toggle,.knob{transition:none}}
 </style>
